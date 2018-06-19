@@ -35,7 +35,7 @@ single_FPC  = function(betalist=NULL, obs,timep, basis_intelist, spline_basis,th
 	value_before = value
 
 	alpha_fit = function(i){
-		print(i)
+		#print(i)
 		xmat = colSums(rep(beta1,each=length(timep[[i]]))%>%matrix(nrow=spline_basis$nbasis,byrow = T)*basis_intelist[[i]])
 
 
