@@ -168,6 +168,7 @@ single_FPC  = function(betalist=NULL, obs,timep, basis_intelist, spline_basis,th
 	options$beta_all = beta_all
 	options$value_all = value_all
 	options$previous_beta = betalist
+	options$value = value
 	return(list(beta=beta1,pc_fit = pc_fit,sfit=sfit, options=  options))
 }
 
