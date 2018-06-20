@@ -59,6 +59,6 @@ residuals = lapply(1:length(ylist), function(x){
 })%>%do.call(c,.)
 
 sigmahat = mean((residuals[!is.na(residuals)])^2)
-list(sigmahat = sigmahat, yfd_fit=  yfitsfd_de,sfit = cfits)
+list(sigmahat = sigmahat, yfd_fit=  yfitsfd_de,sfit = cfits, observed=observed, timepoints = timepoints)
 
 }
