@@ -158,7 +158,7 @@ single_FPC  = function(betalist=NULL, obs,timep, basis_intelist, spline_basis,th
 	beta1 = coef(pc_fit)%>%as.numeric
 	thresh =  max(abs(beta1_before-beta1))
 	it = it+1
-	if(it%%100==0) {print(it);print(as.numeric(thresh));print(as.numeric(value))}
+	# if(it%%100==0) {print(it);print(as.numeric(thresh));print(as.numeric(value))}
 	if(it>maxeval) break
 	}
 	pc_fit = fd(beta1, spline_basis)
