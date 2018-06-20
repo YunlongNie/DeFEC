@@ -2,6 +2,7 @@
 
 export(DeFEC)
 export(DeFECplot)
+export(FPCfirst_multi_start)
 export(create_basis_intematlist)
 export(fdaggD)
 export(predict_DeFEC)

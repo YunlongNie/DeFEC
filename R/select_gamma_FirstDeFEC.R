@@ -10,6 +10,7 @@
 #' @param evalc evaluate times 
 #' @param maxit maxit 
 #' @export select_gamma
+#' @export FPCfirst_multi_start
 #' @import Rsolnp
 #' @import fda
 #' @import ggplot2
