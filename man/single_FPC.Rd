@@ -5,7 +5,8 @@
 \title{This function computes the first DeFEC}
 \usage{
 single_FPC(betalist = NULL, obs, timep, basis_intelist, spline_basis,
-  threshold = 0.001, minit = 20, gamma = 0, maxeval = 1000)
+  threshold = 0.001, minit = 20, gamma = 0, maxeval = 1000,
+  randomseed = 1001)
 }
 \arguments{
 \item{betalist}{a list of previous DeFEC's coefficients, the resulting one should be orthogonal to those previous computed ones.}

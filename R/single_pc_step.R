@@ -16,7 +16,16 @@
 
 
 
-single_FPC  = function(betalist=NULL, obs,timep, basis_intelist, spline_basis,threshold=1e-3,minit=20,gamma=0,maxeval=1e3){
+single_FPC  = function(betalist=NULL, obs,timep, basis_intelist, spline_basis,threshold=1e-3,minit=20,gamma=0,maxeval=1e3, randomseed=1001){
+	options = list()
+	options$spline_basis = spline_basis
+	options$threshold = threshold
+	options$minit = minit
+	options$gamma = gamma
+	options$maxeval = maxeval
+	options$randomseed  = randomseed 
+
+	set.seed(randomseed)
 	beta1 = rnorm(spline_basis$nbasis)
 	library(Rsolnp)
 	thresh = 1
@@ -156,7 +165,9 @@ single_FPC  = function(betalist=NULL, obs,timep, basis_intelist, spline_basis,th
 	pc_fit = (1/sqrt(inprod(pc_fit, pc_fit))*pc_fit)
 	beta1 = coef(pc_fit)%>%as.numeric
 
-
-	return(list(beta=beta1,pc_fit = pc_fit,sfit=sfit, thresh = thresh,it=it,value=value,gamma=gamma,beta_all = beta_all,value_all = value_all,previous_beta= betalist))
+	options$beta_all = beta_all
+	options$value_all = value_all
+	options$previous_beta = betalist
+	return(list(beta=beta1,pc_fit = pc_fit,sfit=sfit, options=  options))
 }
 
