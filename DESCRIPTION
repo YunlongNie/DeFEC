@@ -2,7 +2,7 @@ Package: DeFEC
 Type: Package
 Title: R package for Estimating the derivative function for sparse functional data
 Version: 1.0
-Build Time: 2018-06-20 15:12:40
+Build Time: 2018-06-20 18:40:35
 Author: Yunlong
 Contact: nyunlong AT sfu.ca
 DESCRIPTION: no discription

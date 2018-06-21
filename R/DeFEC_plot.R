@@ -16,8 +16,8 @@ observed = DeFEC_pred$observed
 timepoints = DeFEC_pred$timepoints
 
 spline_basis = DeFEC_fd$basis
-t = seq(spline_basis$rangeval[1],spline_basis $rangeval[2],len=100)
-
+# t = seq(spline_basis$rangeval[1],spline_basis $rangeval[2],len=100)
+t = seq(spline_basis$rangeval[1],spline_basis $rangeval[2],len=30)
 basis_intemat  = lapply(t, function(x){
 	sapply(1:spline_basis$nbasis,function(i){
 	basis_integral = function(x){
@@ -50,7 +50,7 @@ p1=  ggplot(data%>%filter(id%in%sample_ids),aes(x=Time, y=value,group=id,color=f
 dpc=eval.fd(t, DeFEC_fd)
 
 
-plotdata = (dpc%>%as.matrix)%*%t(soap_fit3$sfit[,-1])
+plotdata = (dpc%>%as.matrix)%*%t(DeFEC_pred$sfit[,-1])
 data = reshape2::melt(plotdata)
 names(data) =c('Time',"id","value")
 data$Time = t[data$Time]
