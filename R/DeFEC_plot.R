@@ -55,7 +55,7 @@ data = reshape2::melt(plotdata)
 names(data) =c('Time',"id","value")
 data$Time = t[data$Time]
 
-p2 = ggplot(data%>%filter(id%in%sample_ids),aes(x=Time, y=value,group=id))+geom_line(size=1.1,col=4)+geom_hline(yintercept=0, linetype=2,col=2)+facet_wrap(~id, nrow=1, scales = "free")+theme_bw()+ylab('Estimated Derivatives')+xlab('Time')+theme(legend.position = "none",text=element_text(size=rel(4)),legend.text =element_text(size=rel(4)))
+p2 = ggplot(data%>%filter(id%in%sample_ids),aes(x=Time, y=value,group=id))+geom_line(size=1.1,col=4)+geom_hline(yintercept=0, linetype=2,col=2)+facet_wrap(~id, scales = "free")+theme_bw()+ylab('Estimated Derivatives')+xlab('Time')+theme(legend.position = "none",text=element_text(size=rel(4)),legend.text =element_text(size=rel(4)))
 
 return(list(fitplot = p1, derivplot=p2))
 
